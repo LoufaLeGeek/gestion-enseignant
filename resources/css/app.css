@@ -1,8 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 @import 'tailwindcss';
 
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 
+@plugin "daisyui";
+
+
+@plugin "daisyui/theme" {
+    name: "light";
+    default: true;
+    prefersdark: true;
+    color-scheme: "dark";
+    --color-base-100: oklch(100% 0 0);
+    --color-base-200: oklch(98% 0 0);
+    --color-base-300: oklch(95% 0 0);
+    --color-base-content: oklch(21% 0.006 285.885);
+    --color-primary: oklch(45% 0.24 277.023);
+    --color-primary-content: oklch(93% 0.034 272.788);
+    --color-secondary: oklch(65% 0.241 354.308);
+    --color-secondary-content: oklch(94% 0.028 342.258);
+    --color-accent: oklch(77% 0.152 181.912);
+    --color-accent-content: oklch(38% 0.063 188.416);
+    --color-neutral: oklch(14% 0.005 285.823);
+    --color-neutral-content: oklch(92% 0.004 286.32);
+    --color-info: oklch(74% 0.16 232.661);
+    --color-info-content: oklch(29% 0.066 243.157);
+    --color-success: oklch(76% 0.177 163.223);
+    --color-success-content: oklch(37% 0.077 168.94);
+    --color-warning: oklch(82% 0.189 84.429);
+    --color-warning-content: oklch(41% 0.112 45.904);
+    --color-error: oklch(71% 0.194 13.428);
+    --color-error-content: oklch(27% 0.105 12.094);
+    --radius-selector: 0.5rem;
+    --radius-field: 0.25rem;
+    --radius-box: 0.5rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 2px;
+    --depth: 1;
+    --noise: 0;
+}
+
+
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
+
+    /* ── Textes ── */
+    --color-text-gray: oklch(44.6% 0.03 256.802);
+    --color-text-muted: oklch(44.6% 0.03 256.802 / 0.60);
+
+    /* ── Teintes primary (surfaces légères) ── */
+    --color-tint-primary: oklch(95% 0.04 277);
+    --color-tint-primary-soft: oklch(45% 0.24 277.023 / 0.12);
+
+    /* ── Bordures ── */
+    --color-border-subtle: oklch(44.6% 0.03 256.802 / 0.05);
+    --color-border-primary-subtle: oklch(45% 0.24 277.023 / 0.05);
+    --color-border-primary-light: oklch(45% 0.24 277.023 / 0.15);
+    --color-border-primary-mid: oklch(45% 0.24 277.023 / 0.25);
+
+    /* ── Ombres ── */
+    --color-shadow-primary: oklch(45% 0.24 277.023 / 0.30);
+
+    /* ── Logo block ── */
+    --color-logo-bg: oklch(98.5% 0 0);
+    --color-logo-border: oklch(94% 0.004 286);
+
+    /* ── Déconnexion ── */
+    --color-logout-bg: oklch(71% 0.194 13.428 / 0.08);
+    --color-logout-border: oklch(71% 0.194 13.428 / 0.18);
+    --color-logout-text: oklch(50% 0.18 13.428);
+
+    /* ── Dégradé primary ── */
+    --color-primary-end: oklch(52% 0.22 290);
+
+    /* ── Rôle Admin — bleu primary ── */
+    --color-role-admin: oklch(45% 0.24 277);
+    --color-role-admin-end: oklch(52% 0.22 290);
+    --color-role-admin-tint: oklch(95% 0.04 277);
+    --color-role-admin-border: oklch(45% 0.24 277 / 0.20);
+    --color-role-admin-text: oklch(40% 0.22 277);
+
+    /* ── Rôle Enseignant — vert ── */
+    --color-role-teacher: oklch(55% 0.18 163);
+    --color-role-teacher-end: oklch(65% 0.16 163);
+    --color-role-teacher-tint: oklch(95% 0.05 163);
+    --color-role-teacher-border: oklch(55% 0.18 163 / 0.22);
+    --color-role-teacher-text: oklch(38% 0.14 163);
+
+    /* ── Rôle Responsable — ambre ── */
+    --color-role-manager: oklch(60% 0.20 55);
+    --color-role-manager-end: oklch(70% 0.18 70);
+    --color-role-manager-tint: oklch(96% 0.04 65);
+    --color-role-manager-border: oklch(60% 0.20 55 / 0.22);
+    --color-role-manager-text: oklch(42% 0.18 55);
+
+    /* ── Rôle Comptable — violet/rose ── */
+    --color-role-accountant: oklch(55% 0.18 310);
+    --color-role-accountant-end: oklch(63% 0.16 325);
+    --color-role-accountant-tint: oklch(96% 0.04 315);
+    --color-role-accountant-border: oklch(55% 0.18 310 / 0.22);
+    --color-role-accountant-text: oklch(40% 0.16 310);
+
+}
+
+
+@layer base {
+    body {
+        @apply font-sans font-normal bg-base-100 text-text-gray;
+    }
+}
+
+@layer components {
+
+    .label-wrapper {
+        @apply grow min-w-60 flex items-center gap-2.5 h-9 px-3 rounded-xl bg-base-200 border border-transparent shadow-sm transition-all duration-200;
+
+        &:focus-within {
+            @apply bg-base-100 border-base-300;
+        }
+    }
+
+    .input-wrapper {
+        @apply bg-transparent outline-none border-none w-full p-0 text-[13px] placeholder:text-text-muted/70;
+
+        &:focus {
+            @apply ring-0;
+        }
+    }
+
+    .toggle-btn {
+        @apply flex items-center justify-center h-8 w-8 rounded-lg bg-base-300 border border-border-primary-subtle cursor-pointer hover:scale-105 transition-all duration-200
+    }
 }
