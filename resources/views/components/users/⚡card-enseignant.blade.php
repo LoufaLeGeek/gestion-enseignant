@@ -25,7 +25,7 @@ new class extends Component {
         <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-3">
                 <div
-                    class="h-11 w-11 shrink-0 rounded-xl flex items-center justify-center font-black text-base-100 bg-linear-to-br {{ $this->style['from'] }} {{ $this->style['to'] }} shadow-sm group-hover:rotate-3 transition-transform duration-300">
+                    class="h-11 w-11 shrink-0 rounded-xl flex items-center justify-center font-black text-base-100 bg-linear-to-br {{ $this->style['from'] }} {{ $this->style['to'] }} shadow-sm group-hover:rotate-3 group-hover:scale-110 transition-transform duration-300">
                     {{ $enseignant->initials }}
                 </div>
                 <div>
