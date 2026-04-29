@@ -8,7 +8,7 @@ new class extends Component {
 
 <div wire:click="export" wire:loading.attr="disabled" @class([
     'group w-full h-fit flex items-center cursor-pointer border border-border-subtle py-2 rounded-lg bg-base-300 transition-all duration-200',
-    'hover:bg-gray-200 hover:border-primary/30',
+    'hover:bg-gray-200',
     'is-drawer-close:justify-center is-drawer-open:px-2',
     'opacity-80' => false 
 ])>

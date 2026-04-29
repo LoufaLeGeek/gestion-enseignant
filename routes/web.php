@@ -8,7 +8,6 @@ Route::prefix("admin")->name("admin.")->group(function () {
     Route::livewire("/roles", "pages::admin.roles")->name("roles");
 });
 
-
 // ROUTES RESPONSABLE
 Route::prefix("responsable")->name("responsable.")->group(function () {
     Route::livewire("/enseignants", "pages::responsable.enseignants")->name("enseignants");
