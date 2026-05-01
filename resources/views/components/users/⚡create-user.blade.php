@@ -25,7 +25,7 @@ new class extends Component {
 
 
     <dialog id="create_user" class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box p-0 overflow-hidden border-none shadow-2xl">
+        <div class="modal-box p-0 overflow-auto border-none shadow-2xl">
             {{-- En-tête de la Modal --}}
             <x-shared.header-modal title="Créer un nouvel utilisateur"
                 subtitle="Remplissez les informations pour ajouter un membre du personnel." icon="heroicon-o-user-plus"

@@ -52,6 +52,7 @@ new #[Layout("layouts::responsable", ["title" => 'Répartition des Charges Horai
                 <input required placeholder="Rechercher..." class="input-wrapper" />
             </label>
 
+            {{-- Exporter --}}
             <button class="h-8.5 px-3 rounded-xl border border-base-300
                                bg-base-100 text-[11px] font-medium
                                flex items-center gap-1.5
@@ -62,8 +63,6 @@ new #[Layout("layouts::responsable", ["title" => 'Répartition des Charges Horai
                 Exporter
             </button>
         </div>
-
-
 
         {{-- TABLE --}}
         <div class="overflow-x-auto rounded-xl border border-base-200">
@@ -76,6 +75,7 @@ new #[Layout("layouts::responsable", ["title" => 'Répartition des Charges Horai
                         <th class="text-left">Enseignant</th>
                         <th class="text-center">Type</th>
                         <th class="text-left">Pédagogie</th>
+                        <th class="text-left">Annee</th>
                         <th class="text-right">Volume</th>
                         <th class="text-center">Statut</th>
                         <th class="text-center">Action</th>
@@ -134,6 +134,10 @@ new #[Layout("layouts::responsable", ["title" => 'Répartition des Charges Horai
                                 </div>
                             </td>
 
+                            <td class="text-left">
+                                <div class="badge badge-sm badge-neutral badge-soft">2021-2002</div>
+                            </td>
+
                             <td class="text-right">
                                 <div class="flex flex-col items-end gap-1">
                                     <div class="text-[11px]">
@@ -155,15 +159,16 @@ new #[Layout("layouts::responsable", ["title" => 'Répartition des Charges Horai
 
                             <td class="text-center">
                                 <div class="flex items-center justify-center gap-1.5">
-                                    <button  class="h-7.5 w-7.5 flex items-center justify-center rounded-lg
-                                               bg-tint-primary border border-border-primary-light
-                                               hover:opacity-80 active:scale-95 transition-all duration-150">
+                                    <button
+                                        class="h-7.5 w-7.5 flex items-center justify-center rounded-lg
+                                                               bg-tint-primary border border-border-primary-light
+                                                               hover:opacity-80 active:scale-95 transition-all duration-150">
                                         <x-heroicon-o-pencil-square class="h-3.5 w-3.5 text-primary" />
                                     </button>
-                                    <button 
-                                        wire:confirm="Supprimer cette affectation ?" class="h-7.5 w-7.5 flex items-center justify-center rounded-lg
-                                               bg-logout-bg border border-logout-border
-                                               hover:opacity-80 active:scale-95 transition-all duration-150">
+                                    <button wire:confirm="Supprimer cette affectation ?"
+                                        class="h-7.5 w-7.5 flex items-center justify-center rounded-lg
+                                                               bg-logout-bg border border-logout-border
+                                                               hover:opacity-80 active:scale-95 transition-all duration-150">
                                         <x-heroicon-o-trash class="h-3.5 w-3.5 text-logout-text" />
                                     </button>
                                 </div>

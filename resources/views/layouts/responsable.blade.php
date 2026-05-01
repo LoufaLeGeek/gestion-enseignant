@@ -78,13 +78,9 @@
                                 [
                                     'route' => 'responsable.filieres',
                                     'label' => 'Filières',
-                                    'icon' => 'heroicon-o-rectangle-group', // Groupement pour les parcours d'études
+                                    'icon' => 'heroicon-o-academic-cap', // Groupement pour les parcours d'études
                                 ],
-                                [
-                                    'route' => 'responsable.matieres',
-                                    'label' => 'Matières',
-                                    'icon' => 'heroicon-o-book-open', // Livre ouvert pour les cours/matières
-                                ],
+                             
 
                             ];
                         @endphp
