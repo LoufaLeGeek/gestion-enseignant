@@ -15,11 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('prenom');
-            $table->string('role');          // casté vers RoleEnum
+            $table->string('role')->default('ENSEIGNANT');
             $table->boolean('actif')->default(true);
             $table->string('email')->unique();
             $table->string('password');
-            
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
