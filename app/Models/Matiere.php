@@ -22,24 +22,18 @@ class Matiere extends Model
      protected function casts(): array
     {
         return [
-            'semestre'   => TypeSemestreEnum::class, // cast → TypeSemestreEnum (S1..S6)
+            'semestre'   => TypeSemestreEnum::class, 
             'volume_cm'  => 'integer',
             'volume_td'  => 'integer',
             'volume_tp'  => 'integer',
         ];
     }
 
-    /**
-     * Relation : Concerner (1) — une matière appartient à une filière.
-     */
     public function filiere(): BelongsTo
     {
         return $this->belongsTo(Filiere::class);
     }
- 
-    /**
-     * Relation : Peut faire l'objet (1,*) — une matière peut avoir plusieurs affectations.
-     */
+
     public function affectations(): HasMany
     {
         return $this->hasMany(Affectation::class);

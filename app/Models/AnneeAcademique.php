@@ -3,6 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
 
 class AnneeAcademique extends Model
 {
@@ -22,5 +25,10 @@ class AnneeAcademique extends Model
             'date_fin' => 'date',
             'actif' => 'boolean',
         ];
+    }
+
+    public function affectations(): HasMany
+    {
+        return $this->hasMany(Affectation::class);
     }
 }

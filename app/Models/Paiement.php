@@ -32,10 +32,7 @@ class Paiement extends Model
             'date_generation' => 'datetime',
         ];
     }
- 
-    /**
-     * Relation : Regrouper (1,1) via PaiementAffectation.
-     */
+
     public function affectation(): BelongsTo
     {
         return $this->belongsTo(Affectation::class);

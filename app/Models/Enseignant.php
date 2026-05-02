@@ -19,4 +19,14 @@ class Enseignant extends Model
         'actif',
         'user_id',
     ];
+
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function departements()
+    {
+        return $this->belongsToMany(Departement::class);
+    }
 }

@@ -13,18 +13,11 @@ class Departement extends Model
         'description',
     ];
 
-     /**
-     * Relation : Appartenir (*) — un département a plusieurs filières.
-     */
     public function filieres(): HasMany
     {
         return $this->hasMany(Filiere::class);
     }
- 
-    /**
-     * Relation : Appartenir (*,*) via EnseignantDepartement (pivot enrichi).
-     * Un département est rattaché à plusieurs enseignants.
-     */
+
     public function enseignants(): BelongsToMany
     {
         return $this->belongsToMany(Enseignant::class, 'enseignant_departements')
